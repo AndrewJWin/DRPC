@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>DRPC</title>
+  </head>
+  <body class="background-2">
+  <div class="draggable-area">
+    <h1 style="font-family: Noto Sans; color: white">Discord RPC</h1>
+    <b style="font-family: Noto Sans; color: white">Where are you?</b>
+  </div>
+    <hr>
+    
+    <button type="button" class="button2" style="margin:2px; transition-duration: 0.4s" onclick="home('normal')">At Home</button> <b>|</b>
+    <button type="button" class="button2" style="transition-duration: 0.4s;" onclick="home('busy')">Busy</button> <b>|</b>
+    <button type="button" class="button2" style="transition-duration: 0.4s;" onclick="home('asleep')">Asleep</button>
+    
+    <br>
+    <button type="button" class="button2" style="margin:3px; transition-duration: 0.4s" onclick="work()">At Work</button>
+    <br>
+    <button type="button" class="button2" style="margin:3px; transition-duration: 0.4s" onclick="someelse()">Somewhere Else</button>
+    <hr>
+    
+  </body>
+  <script>
+  const { ipcRenderer } = require('electron')
+  function home(doing) {
+    switch (doing) {
+      case 'busy':
+        ipcRenderer.send('asynchronous-message', 'homebusy')
+        break;
+    
+        case 'asleep':
+        ipcRenderer.send('asynchronous-message', 'homesleep')
+        break;
+        
+      default:      
+        ipcRenderer.send('asynchronous-message', 'home')
+        break;
+    }
+  }
+
+  function work() {
+    ipcRenderer.send('asynchronous-message', 'work')
+  }
+
+  function someelse() {
+    ipcRenderer.send('asynchronous-message', 'else')
+  }
+
+  function toggle() {
+    ipcRenderer.send('asynchronous-message', 'toggle')
+  }
+  </script>
+</html>

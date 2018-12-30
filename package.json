@@ -1,0 +1,17 @@
+{
+  "name": "discord-rich-presence-controller",
+  "version": "1.0.0",
+  "description": "Control your status with my Electron Powered Presence Controller",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/AndrewJWin/DRPC",
+  "author": "AndrewJWin",
+  "devDependencies": {
+    "electron": "^3.0.7"
+  },
+  "dependencies": {
+    "discord-rpc": "^3.0.1"
+  }
+}
