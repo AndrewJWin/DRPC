@@ -9,7 +9,7 @@
   "repository": "https://github.com/AndrewJWin/DRPC",
   "author": "AndrewJWin",
   "devDependencies": {
-    "electron": "^3.0.7"
+    "electron": "^7.2.4"
   },
   "dependencies": {
     "discord-rpc": "^3.0.1"
